@@ -1,0 +1,85 @@
+\documentclass[twocolumn,9pt]{article}
+
+% Package imports
+\usepackage{amsmath, amssymb, amsthm, graphicx, hyperref}
+\usepackage{geometry, float}
+\usepackage{tikz, pgfplots}
+\usepackage{booktabs, array}
+\usepackage{caption, subcaption}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{algorithm2e}
+\usepackage{balance}
+
+% TikZ libraries
+\usetikzlibrary{decorations.pathmorphing, patterns, arrows, shapes, positioning, fit, calc}
+\pgfplotsset{compat=1.16}
+
+% Document setup
+\geometry{margin=1in}
+\setlength{\columnsep}{0.25in}
+\setlength{\parindent}{1em}
+
+% Header setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{A Constructive Spectral Framework for the Riemann Hypothesis}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Math definitions
+\newcommand{\zs}{\zeta(s)}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\modm}{\bmod m}
+\newcommand{\kbf}{\mathbf{k}}
+\newcommand{\Hhat}{\hat{H}}
+
+\title{A Constructive Spectral Framework for the Riemann Hypothesis\\via Symbolic Modular Potentials}
+\author{Sebastian Schepis}
+\date{\today}
+
+\begin{document}
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \begin{abstract}
+    We propose a novel spectral framework potentially related to the Riemann Hypothesis, constructing a finite-dimensional Hermitian operator whose eigenvalues numerically approximate the imaginary parts of the first few non-trivial zeros of the Riemann zeta function. The operator acts on a Hilbert space spanned by prime-indexed basis states and incorporates symbolic potentials derived from a discrete Schr\"odinger equation over modular residue classes, designed to reflect prime density. Numerical results for \(N=50\) show close alignment with the initial zeta zeros (squared loss \(\mathcal{L} \approx 0.00073\)). While cross-validation and scaling tests suggest robustness, this work remains a proof-of-concept. Establishing a rigorous connection to the Riemann Hypothesis requires significant further theoretical development and validation of the underlying conjectures regarding the infinite-dimensional limit and spectral properties.
+    \end{abstract}
+    \vspace{0.5cm}
+  \end{@twocolumnfalse}
+]
+
+\input{sections/introduction.tex}
+
+\input{sections/residue_class_potential_model.tex}
+
+\input{sections/symbolic_schrodinger_equation.tex}
+
+\input{sections/hermitian_operator_construction.tex}
+
+\input{sections/numerical_spectral_analysis.tex}
+\input{sections/ground_state_properties.tex}
+\input{sections/self_adjointness.tex}
+\input{sections/integrated_spectral_density.tex}
+\input{sections/symbolic_resonance.tex}
+\input{sections/operator_valued_zeta.tex}
+\input{sections/spectral_riemann_hypothesis.tex}
+\input{sections/discussion.tex}
+\input{sections/appendix.tex}
+\input{sections/acknowledgements.tex}
+
+\begin{thebibliography}{9}
+\bibitem{Connes1999} A. Connes, \textit{Trace formula in noncommutative geometry and the zeros of the Riemann zeta function}, Selecta Mathematica, 5(1), 29--106 (1999).
+\bibitem{BerryKeating1999} M. V. Berry and J. P. Keating, \textit{The Riemann zeros and eigenvalue asymptotics}, SIAM Review, 41(2), 236--266 (1999).
+\bibitem{Montgomery1973} H. L. Montgomery, \textit{The pair correlation of zeros of the zeta function}, Analytic Number Theory, AMS, 181--193 (1973).
+\bibitem{HardyLittlewood1923} G. H. Hardy and J. E. Littlewood, \textit{The approximate functional equation in the theory of the zeta-function}, Mathematische Zeitschrift, 17, 1--37 (1923).
+\bibitem{Davenport1980} H. Davenport, \textit{Multiplicative Number Theory}, 2nd ed., Springer (1980).
+\end{thebibliography}
+
+\balance
+
+
+\end{document}
